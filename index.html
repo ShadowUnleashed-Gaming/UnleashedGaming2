@@ -1,20 +1,3 @@
-[Root Directory]
-- index.html (Home Page)
-- schedule.html (Streaming Schedule)
-- streams.html (Live Streams)
-- gallery.html (Clips & Screenshots)
-- contact.html (Contact Page)
-- forms.html (Forms Page)
-- business.html (Business Inquiries)
-- links.html (Useful Links)
-- chat.html (Chat Box)
-- styles.css (Stylesheet)
-- script.js (JavaScript File)
-
-----
-
-index.html (Home Page):
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,34 +6,160 @@ index.html (Home Page):
     <title>ShadowUnleashed Gaming</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ff0000;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 0px 10px red;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav a {
+            color: #ff0000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        button {
+            background: #ff0000;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0px 0px 10px red;
+        }
+        .chatbox {
+            width: 300px;
+            height: 400px;
+            background: black;
+            color: white;
+            border: 1px solid red;
+            padding: 10px;
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+        }
+        .chatbox textarea {
+            width: 100%;
+            height: 80%;
+            background: black;
+            color: white;
+            border: 1px solid red;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1 contenteditable="true">Welcome to ShadowUnleashed Gaming</h1>
+        <h1 contenteditable="true" id="title">Welcome to ShadowUnleashed Gaming</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="schedule.html">Schedule</a></li>
-                <li><a href="streams.html">Streams</a></li>
-                <li><a href="gallery.html">Clips & Screenshots</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="forms.html">Forms</a></li>
-                <li><a href="business.html">Business Inquiries</a></li>
-                <li><a href="links.html">Links</a></li>
-                <li><a href="chat.html">Chat</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#streams">Streams</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#gallery">Clips & Screenshots</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#forms">Forms</a></li>
             </ul>
         </nav>
     </header>
-    <section>
-        <h2 contenteditable="true">About ShadowUnleashed Gaming</h2>
-        <p contenteditable="true">Welcome to the official site of ShadowUnleashed Gaming. Stay tuned for the latest updates!</p>
+    
+    <section id="home">
+        <h2 contenteditable="true" id="about-title">About</h2>
+        <p contenteditable="true" id="about-text">Welcome to the official site of ShadowUnleashed Gaming. Stay tuned for the latest updates!</p>
     </section>
-    <footer>
-        <p>&copy; 2025 ShadowUnleashed Gaming. All rights reserved.</p>
-    </footer>
+    
+    <section id="forms">
+        <h2 contenteditable="true" id="forms-title">Forms</h2>
+        <p contenteditable="true" id="forms-text">Upload and manage your forms here.</p>
+        <input type="file" id="upload-form" accept=".pdf,.doc,.docx,.txt">
+        <button onclick="uploadFile()">Upload</button>
+        <ul id="form-list"></ul>
+    </section>
+    
+    <section id="streams">
+        <h2 contenteditable="true" id="streams-title">Live Streams</h2>
+        <p contenteditable="true" id="streams-text">Check out the latest streams here.</p>
+    </section>
+    
+    <section id="news">
+        <h2 contenteditable="true" id="news-title">News & Updates</h2>
+        <p contenteditable="true" id="news-text">Latest gaming news and content updates.</p>
+    </section>
+    
+    <section id="schedule">
+        <h2 contenteditable="true" id="schedule-title">Stream Schedule</h2>
+        <p contenteditable="true" id="schedule-text">Upcoming stream times and events.</p>
+    </section>
+    
+    <section id="gallery">
+        <h2 contenteditable="true" id="gallery-title">Clips & Screenshots</h2>
+        <p contenteditable="true" id="gallery-text">A collection of my best moments.</p>
+    </section>
+    
+    <section id="contact">
+        <h2 contenteditable="true" id="contact-title">Contact</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" required></textarea><br>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+    
+    <div class="chatbox">
+        <h3>Live Chat</h3>
+        <textarea placeholder="Type your message..."></textarea>
+        <button>Send</button>
+    </div>
+    
+    <button onclick="saveChanges()">Save Changes</button>
+    <script>
+        function saveChanges() {
+            const elements = [
+                'title', 'about-title', 'about-text', 'streams-title', 'streams-text', 'news-title', 'news-text', 'schedule-title', 'schedule-text', 'gallery-title', 'gallery-text', 'contact-title', 'forms-title', 'forms-text'
+            ];
+            elements.forEach(id => {
+                localStorage.setItem(id, document.getElementById(id).innerHTML);
+            });
+        }
+        
+        function loadChanges() {
+            const elements = [
+                'title', 'about-title', 'about-text', 'streams-title', 'streams-text', 'news-title', 'news-text', 'schedule-title', 'schedule-text', 'gallery-title', 'gallery-text', 'contact-title', 'forms-title', 'forms-text'
+            ];
+            elements.forEach(id => {
+                if (localStorage.getItem(id)) {
+                    document.getElementById(id).innerHTML = localStorage.getItem(id);
+                }
+            });
+        }
+        
+        function uploadFile() {
+            const fileInput = document.getElementById('upload-form');
+            const fileList = document.getElementById('form-list');
+            if (fileInput.files.length > 0) {
+                const li = document.createElement('li');
+                li.textContent = fileInput.files[0].name;
+                fileList.appendChild(li);
+            }
+        }
+        
+        document.addEventListener("DOMContentLoaded", loadChanges);
+    </script>
 </body>
 </html>
-
-----
-
-Each page follows a similar structure but with content relevant to its topic. All pages are separate and linked together for easy navigation. Let me know if you need additional modifications! 🚀
