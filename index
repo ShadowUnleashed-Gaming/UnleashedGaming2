@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShadowUnleashed Gaming</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to ShadowUnleashed Gaming</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#content">Content</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="about">
+        <h2>About</h2>
+        <p>This is a basic website template for ShadowUnleashed Gaming. Customize it as you like!</p>
+    </section>
+    
+    <section id="content">
+        <h2>Content</h2>
+        <p>Showcase your latest gaming videos, streams, or news here.</p>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Reach out via social media or email.</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 ShadowUnleashed Gaming. All rights reserved.</p>
+    </footer>
+</body>
+</html>
