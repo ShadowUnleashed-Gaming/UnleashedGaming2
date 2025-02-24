@@ -47,43 +47,44 @@ index.html (Home Page):
 
 ----
 
-styles.css (Dark Theme & Neon Styling):
+schedule.html (Streaming Schedule):
 
-body {
-    background-color: #111;
-    color: #fff;
-    font-family: Arial, sans-serif;
-}
-nav ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-}
-nav a {
-    color: red;
-    text-shadow: 0 0 5px red;
-    padding: 10px;
-    text-decoration: none;
-}
-.chatbox {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 10px;
-    border: 1px solid red;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streaming Schedule</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Streaming Schedule</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="streams.html">Streams</a></li>
+                <li><a href="gallery.html">Clips & Screenshots</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="forms.html">Forms</a></li>
+                <li><a href="business.html">Business Inquiries</a></li>
+                <li><a href="#" onclick="toggleChat()">Chat</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Upcoming Streams</h2>
+        <p>Check out the upcoming streams and events here.</p>
+    </section>
+    <footer>
+        <p>&copy; 2025 ShadowUnleashed Gaming. All rights reserved.</p>
+    </footer>
+</body>
+</html>
 
 ----
 
-script.js (Chatbox Toggle):
+**Other pages (streams.html, gallery.html, contact.html, forms.html, business.html) follow the same structure.**
 
-function toggleChat() {
-    var chat = document.getElementById("chatbox");
-    chat.style.display = chat.style.display === "block" ? "none" : "block";
-}
-
-----
-
-Other pages (schedule.html, streams.html, gallery.html, contact.html, forms.html, business.html) will follow a similar structure, with contenteditable attributes for easy editing. Let me know if you need further modifications! 🚀
+This should ensure all pages are accessible! Let me know if you need further refinements. 🚀
