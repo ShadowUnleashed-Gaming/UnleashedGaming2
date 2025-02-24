@@ -1,81 +1,37 @@
-[Root Directory]
-- index.html (Home Page)
-- about.html (About Page)
-- services.html (Services Page)
-- contact.html (Contact Page)
-- blog.html (Blog Page)
-- styles.css (Stylesheet)
-- script.js (JavaScript File)
-
-----
-
-index.html (Home Page):
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My New Website</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <title>ShadowUnleashed Gaming</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script defer src="assets/js/main.js"></script>
 </head>
 <body>
+
     <header>
-        <h1>Welcome to My Website</h1>
+        <h1 class="neon-text">ShadowUnleashed Gaming</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="schedule.html">Streaming Schedule</a></li>
+                <li><a href="clips.html">Clips</a></li>
+                <li><a href="chatbox.html" onclick="openChat(); return false;">Chat</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="forms.html">Forms</a></li>
+                <li><a href="business.html">Business Inquiries</a></li>
             </ul>
         </nav>
     </header>
-    <section>
-        <h2>Introduction</h2>
-        <p>Welcome to my brand-new website. Explore our content and services!</p>
+
+    <section class="hero">
+        <h2>Welcome to the Shadow</h2>
+        <p>Unleashing gaming content like never before.</p>
     </section>
+
     <footer>
-        <p>&copy; 2025 My Website. All rights reserved.</p>
+        <p>&copy; 2025 ShadowUnleashed Gaming</p>
     </footer>
+
 </body>
 </html>
-
-----
-
-styles.css (Global Styles):
-
-body {
-    background-color: #f4f4f4;
-    color: #333;
-    font-family: Arial, sans-serif;
-}
-header {
-    background: #222;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-----
-
-script.js (JavaScript for Interactivity):
-
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("Website Loaded Successfully!");
-});
